@@ -1,0 +1,7 @@
+jupyter
+click
+pyyaml
+variants
+requests
+numpy
+python-dateutil>=2.7.0
