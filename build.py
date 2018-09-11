@@ -111,7 +111,8 @@ def pages(config):
     # Move the slides to index.html to update them
     logging.info('Moving slides from {} to index.html'.format(slides_loc))
 
-    shutil.move('index.html', 'index.html.bak')
+    if os.path.exists('index.html'):
+        shutil.move('index.html', 'index.html.bak')
     try:
         shutil.move(slides_loc, 'index.html')
 
@@ -123,7 +124,8 @@ def pages(config):
             conf.get('dirs', [])               # Directories
         )
     except:
-        shutil.move('index.html.bak', 'index.html')
+        if os.path.exists('index.html.bak'):
+            shutil.move('index.html.bak', 'index.html')
         raise
     finally:
         if os.path.exists('index.html.bak'):
