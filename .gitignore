@@ -1,0 +1,7 @@
+.mypy_cache
+.pytest_cache
+.ipynb_checkpoints
+*.ipynb
+
+__pycache__
+*.py[co]
