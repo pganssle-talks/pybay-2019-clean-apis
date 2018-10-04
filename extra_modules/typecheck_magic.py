@@ -9,9 +9,7 @@ the default profile.
 The line magic is called "typecheck" to avoid namespace conflict with the mypy
 package.
 """
-
 from IPython.core.magic import register_cell_magic, register_line_magic
-
 
 @register_cell_magic
 def typecheck(line, cell):
@@ -31,6 +29,9 @@ def typecheck(line, cell):
 
     from IPython import get_ipython
     from mypy import api
+
+    if not hasattr(typecheck, '_context'):
+        typecheck_clear(None)
 
     args = line.split()
     valid_cmds = ['run']
@@ -63,7 +64,7 @@ def typecheck(line, cell):
     # For now, fake the context until I can figure out how to properly
     # include the inter-cell contexts
     cell_original = cell
-    cell = '\n'.join([''] + TYPECHECK_CONTEXT + [cell])
+    cell = '\n'.join([''] + typecheck._context + [cell])
 
     mypy_result = api.run(['-c', cell] + line_opts)
 
@@ -83,10 +84,10 @@ def typecheck(line, cell):
         shell.run_cell(cell_original)
 
     if no_issues and run:
-        TYPECHECK_CONTEXT.extend(cell_original.split('\n'))
+        typecheck._context.extend(cell_original.split('\n'))
+
 
 @register_line_magic
 def typecheck_clear(line):
-    global TYPECHECK_CONTEXT
-    TYPECHECK_CONTEXT = ['from typing import *']
+    typecheck._context = ['from typing import *']
 
