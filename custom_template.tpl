@@ -195,7 +195,7 @@ Reveal.initialize({
     history: true,
     height: '95%',
     width: '95%',
-    center: false,
+    center: true,
     theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
     transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
 
