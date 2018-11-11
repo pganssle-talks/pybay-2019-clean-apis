@@ -109,7 +109,7 @@ pre {
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   color: #000;
   font-family: "News Cycle", "Cantarell", sans-serif;
   font-weight: bold;
@@ -216,9 +216,9 @@ pre {
   width: 95%;
   margin: auto;
   text-align: left;
-  font-size: 0.55em;
+  font-size: 0.70em;
   font-family: 'Roboto Mono', monospace;
-  line-height: 1.1em;
+  line-height: 1.10em;
   word-wrap: break-word; }
 
 .reveal code {
