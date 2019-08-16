@@ -1,4 +1,4 @@
-
+/**
  * A simple theme for reveal.js presentations, similar
  * to the default theme. The accent color is darkblue.
  *
@@ -70,6 +70,7 @@
        url('../fonts/roboto_mono/roboto-mono-v5-latin_latin-ext-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('../fonts/roboto_mono/roboto-mono-v5-latin_latin-ext-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -79,10 +80,9 @@ body {
 
 .reveal {
   font-family: "Lato", sans-serif;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: normal;
-  color: #000;
-  }
+  color: #000; }
 
 ::selection {
   color: #fff;
@@ -91,13 +91,16 @@ body {
 
 .reveal .slides > section,
 .reveal .slides > section > section {
+  text-align: left;
   line-height: 1.3;
   font-weight: inherit; }
 
-/* For some reason this is necessary to keep code blocks from creating
- * scrollbars */
-pre {
-    overflow: hidden;
+.reveal .slides>section {
+  min-height: 90% !important;
+}
+
+.reveal .slides>section>section {
+  min-height: 100% !important;
 }
 
 /*********************************************
@@ -109,7 +112,7 @@ pre {
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   color: #000;
   font-family: "News Cycle", "Cantarell", sans-serif;
   font-weight: bold;
@@ -124,14 +127,14 @@ pre {
   }
 
 .reveal h2 {
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 
 .reveal h3 {
-  font-size: 1.3em; }
+  font-size: 1.4em; }
 
 .reveal h4 {
-  font-size: 1.1em; }
+  font-size: 1.2em; }
 
 .reveal h1 {
   text-shadow: none; }
@@ -140,7 +143,10 @@ pre {
  * OTHER
  *********************************************/
 .reveal p {
-  margin: 0px 0;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   line-height: 1.3; }
 
 /* Ensure certain elements are never larger than the slide itself */
@@ -200,7 +206,6 @@ pre {
   margin: 20px auto;
   padding: 5px;
   font-style: italic;
-  background: rgba(255, 255, 255, 0.05);
   }
 
 .reveal blockquote p:first-child,
@@ -216,18 +221,19 @@ pre {
   width: 95%;
   margin: auto;
   text-align: left;
-  font-size: 0.70em;
-  font-family: 'Roboto Mono', monospace;
-  line-height: 1.10em;
+  font-size: 0.55em;
+  font-family: monospace;
+  line-height: 1.2em;
   word-wrap: break-word; }
 
 .reveal code {
-  font-family: 'Roboto Mono', monospace; }
+  font-family: monospace; }
 
 .reveal pre code {
   display: block;
-  padding: 0px;
-  max-height: 400px;
+  padding: 5px;
+  overflow: auto;
+  max-height: 95%;
   word-wrap: normal; }
 
 .reveal table {
@@ -280,6 +286,10 @@ pre {
 .reveal small * {
   vertical-align: top; }
 
+div.input_area > div.highlight > pre {
+    font-size: 0.8em;
+}
+
 /*********************************************
  * LINKS
  *********************************************/
@@ -302,9 +312,26 @@ pre {
 /*********************************************
  * IMAGES
  *********************************************/
+
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
+  border: 0;
+  box-shadow: none;
+}
+
+img#splash {
+    border: 2px solid;
+    border-color: #444;
+    background: none;
+    max-width: 90%;
+    max-height: 850px;
+}
+
+img#ghscreenshot {
+    border: 2px solid;
+    border-color: #909090;
+
 }
 
 /* border: 4px solid #000;
@@ -328,31 +355,31 @@ pre {
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #00008B; }
+  border-right-color: #000; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #00008B; }
+  border-left-color: #000; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #00008B; }
+  border-bottom-color: #000; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #00008B; }
+  border-top-color: #000; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #0000f1; }
+  border-right-color: #000; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #0000f1; }
+  border-left-color: #000; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #0000f1; }
+  border-bottom-color: #000; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #0000f1; }
+  border-top-color: #000; }
 
 .reveal .controls {
   top: 5px;
@@ -361,6 +388,7 @@ pre {
   width: 105px;
   bottom: auto;
   left: auto;
+  color: #000;
 }
 
 /*********************************************
@@ -379,7 +407,7 @@ pre {
   * Slides
   *******************/
 .reveal {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 .reveal .slides {
@@ -396,34 +424,9 @@ pre {
   margin-bottom: auto !important;
 }
 
-.reveal .footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: absolute;
-  right: 20px;
-  bottom: 2rem;
-  font-size: 3rem;
-  color: #7f7f7f;
-}
-
-
-.reveal .footer span#website {
-    text-decoration: underline;
-}
-
-.reveal .footer span#twitter {
-    font-weight: bold;
-}
-
-.reveal .footer span#logo img {
-    margin-bottom: -1em;
-}
 
 .reveal .slides>section {
   min-height: 90% !important;
-  top: auto !important;
 }
 
 .reveal .slides>section>section {
@@ -461,14 +464,32 @@ div.output_subarea {
   max-width: 100%;
 }
 
-/* Copy of Jupyter input */
-.rendered_html pre {
-    background-color: #f7f7f7;
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-    margin-right: 10%;
+/*##################################
+ * Footer
+ */
+
+div.sbcontainer {
+    position: fixed;
+    top: 5em;
+    right: 20px;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    align-items: flex-end;
 }
 
-.highlight {
-    background: rgba(0, 0, 0, 0);
+img.sbitem {
+    opacity: 0.5;
+    width: 1.1em;
 }
+
+img.sbitem#logo {
+    width: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.rendered_html code {
+    background-color: unset;
+}
+

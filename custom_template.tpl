@@ -91,13 +91,6 @@ if( window.location.search.match( /print-pdf/gi ) ) {
   border: 0px solid black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0);
 }
-/*
-.reveal i {
-  font-style: normal;
-  font-family: FontAwesome;
-  font-size: 2em;
-}
-*/
 .reveal .slides {
   text-align: left;
 }
@@ -169,17 +162,6 @@ a.anchor-link {
 {{ super() }}
 </div>
 <div class="footer">
-{#
-<span id="website" style="text-decoration: underline">
-    https://ganssle.io
-</span>
-<span id="twitter" style="font-weight: bold">
-    @pganssle
-</span>
-<span id="logo" style="margin-bottom: -1em">
-    <img src='images/bloomberg-logo-alpha.svg'>
-</span>
-#}
 {% include 'footer.tpl' %}
 </div>
 {% block post_slides %}
