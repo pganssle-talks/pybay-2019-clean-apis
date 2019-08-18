@@ -13161,6 +13161,7 @@ a.anchor-link {
 <p>My name is Paul Ganssle. I'm a software developer at Google and also a contributor to many open source projects, among others I'm a core developer of Python and maintainer of setuptools and dateutil.</p>
 <p>As a library maintainer, I spend a lot of time thinking about interfaces; how programmers are going to interface with my library and what they see when they look at the documentation.</p>
 <p>So of course if I were to give all my thoughts on this, this talk would be three hours long instead of 30 minutes. But I'm just going to drill down into one thing, which is namespacing and how do you deal with functionality that is functionality that is fundamentally similar to other functionality that you have in there but has a slightly different interface.</p>
+<p>But before we get started, I should mention that these slides and more information are available on my website under "Talks", so hopefully don't worry so much if you miss something, because you can always go back and look at it in more detail.</p>
 
 </div>
 </div>
@@ -13188,7 +13189,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We're going to start with a couple of general principles that are re-occuring themes in the talk.</p>
+<p>Ok, with that out of the way, let's start with a couple of general principles that are re-occuring themes in the talk.</p>
 <p>The first one is that related functionality should be grouped together. So you can namespace your functions by module - the <code>sqrt</code> function is not just a regular built-in; it could be, you wouldn't misinterpret it, but it's namespaced under the <code>math</code> module instead. Compare that to the <code>get</code> function in <code>requests</code>, <code>get</code> is far too broad of a name for a function, but if you look at it in the context of the namespace <code>requests</code>, it's pretty obvious what it does.</p>
 <p>You can also namespace your functions by class, so one example of this is methods on instances; if you look a a <code>str</code> object, it has a method called <code>strip</code> that is operating on the data in the string. There are also methods on classes, like <code>datetime.timestamp</code>, which creates a <code>datetime</code> from a <code>timestamp</code>.</p>
 
@@ -15398,8 +15399,7 @@ Hello, world! This is from a file!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Talk.end()"><code>Talk.end()</code><a class="anchor-link" href="#Talk.end()">&#182;</a></h1><p><br/><br/></p>
-
+<h1 id="Talk.conclude()"><code>Talk.conclude()</code><a class="anchor-link" href="#Talk.conclude()">&#182;</a></h1>
 </div>
 </div>
 </div><aside class="notes">
@@ -15414,11 +15414,11 @@ Hello, world! This is from a file!
 </div>
 </div>
 </div>
-</aside><div class="fragment">
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Talk.end.with_plugs()"><code>Talk.end.with_plugs()</code><a class="anchor-link" href="#Talk.end.with_plugs()">&#182;</a></h1>
+<h1 id="Talk.conclude.with_plugs()"><code>Talk.conclude.with_plugs()</code><a class="anchor-link" href="#Talk.conclude.with_plugs()">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -15447,7 +15447,7 @@ Hello, world! This is from a file!
 </div>
 </div>
 </div>
-</aside></div></section></section>
+</aside></section></section>
 </div>
 <div class="footer">
 <div class="sbcontainer">

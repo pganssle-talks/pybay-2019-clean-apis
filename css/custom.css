@@ -290,6 +290,10 @@ div.input_area > div.highlight > pre {
     font-size: 0.8em;
 }
 
+div.highlight > pre {
+    font-size: 0.8em;
+}
+
 /*********************************************
  * LINKS
  *********************************************/
